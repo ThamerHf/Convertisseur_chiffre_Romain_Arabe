@@ -15,7 +15,24 @@ public class Tests {
 	
 	//TODO : les autres tests
 	@Test
-    public void test
+    public void testRomanToValue(){
+        assertThat("Erreur Invalid Number from Roman", RomanConverter.getNumberFromRoman("IV"), equalTo(4));
+        assertThat("Erreur Invalid Number from Roman", RomanConverter.getNumberFromRoman("V"), equalTo(5));
+        assertThat("Erreur Invalid Number from Roman", RomanConverter.getNumberFromRoman("III"), equalTo(3));
+        assertThat("Erreur Invalid Number from Roman", RomanConverter.getNumberFromRoman("XLI"), equalTo(41));
+        assertThat("Erreur Invalid Number from Roman", RomanConverter.getNumberFromRoman("LIII"), equalTo(53));
+        assertThat("Erreur Invalid Number from Roman", RomanConverter.getNumberFromRoman("MMMCMXCIX"), equalTo(3999));
+    }
+
+    @Test
+    public void testValueToRoman(){
+        assertThat("Erreur Invalid Roman from Roman", RomanConverter.getRomanFromNumber(4), equalTo("IV"));
+        assertThat("Erreur Invalid Number from Roman", RomanConverter.getRomanFromNumber(5), equalTo("V"));
+        assertThat("Erreur Invalid Number from Roman", RomanConverter.getRomanFromNumber(3), equalTo("II"));
+        assertThat("Erreur Invalid Number from Roman", RomanConverter.getRomanFromNumber(41), equalTo("XLI"));
+        assertThat("Erreur Invalid Number from Roman", RomanConverter.getRomanFromNumber(53), equalTo("LIII"));
+        assertThat("Erreur Invalid Number from Roman", RomanConverter.getRomanFromNumber(3999), equalTo("MMMCMXCIX"));
+    }
 
 
     //Help you to handle exception. :-)
